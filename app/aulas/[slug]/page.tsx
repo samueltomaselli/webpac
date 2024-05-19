@@ -10,7 +10,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
   const blog = await getBlogBySlug(params.slug);
 
   return (
-    <main className="px-16 py-10   ">
+    <main className="md:px-16 md:py-10 px-10 py-5 ">
       <article className="flex flex-col prose max-w-4xl prose-sm ">{blog.content}</article>
     </main>
   );

@@ -2,7 +2,6 @@ export const Temas = [
   "Lógica de programação",
   "Linguagem de programação em C",
   "Bibliotecas básicas em C",
-  "Variáveis",
   "Declaração de variáveis",
   "Operações de entrada e saída",
   "Condicionais",
