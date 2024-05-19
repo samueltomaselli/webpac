@@ -21,28 +21,30 @@ Serve para alocação de memória, controle de processos, conversões e outras u
   - `srand`: Inicializa o gerador de números aleatórios.
 
 ```
-#include <stdlib.h>
-#include <stdio.h>
 
-int main() {
-    int *array = (int *)malloc(5 * sizeof(int));
-    if (array == NULL) {
-        printf("Erro na alocação de memória.\n");
-        exit(1);
+    #include <stdlib.h>
+    #include <stdio.h>
+
+    int main() {
+        int *array = (int *)malloc(5 * sizeof(int));
+        if (array == NULL) {
+            printf("Erro na alocação de memória.\n");
+            exit(1);
+        }
+
+        for (int i = 0; i < 5; i++) {
+            array[i] = i * i;
+        }
+
+        for (int i = 0; i < 5; i++) {
+            printf("%d ", array[i]);
+        }
+        printf("\n");
+
+        free(array);
+        return 0;
     }
 
-    for (int i = 0; i < 5; i++) {
-        array[i] = i * i;
-    }
-
-    for (int i = 0; i < 5; i++) {
-        printf("%d ", array[i]);
-    }
-    printf("\n");
-
-    free(array);
-    return 0;
-}
 ```
 
 ## Exemplo: string.h (String Handling)
@@ -60,19 +62,21 @@ Serve para manipulação de strings (cadeias de caracteres).
 **Exemplo:**
 
 ```
-#include <string.h>
-#include <stdio.h>
 
-int main() {
-    char str1[20] = "Hello";
-    char str2[20] = "World";
+    #include <string.h>
+    #include <stdio.h>
 
-    strcat(str1, " ");
-    strcat(str1, str2);
+    int main() {
+        char str1[20] = "Hello";
+        char str2[20] = "World";
 
-    printf("Concatenated String: %s\n", str1);
-    printf("Length of String: %lu\n", strlen(str1));
+        strcat(str1, " ");
+        strcat(str1, str2);
 
-    return 0;
-}
+        printf("Concatenated String: %s\n", str1);
+        printf("Length of String: %lu\n", strlen(str1));
+
+        return 0;
+    }
+
 ```

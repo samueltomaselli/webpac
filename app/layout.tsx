@@ -31,6 +31,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import SearchInput from "@/components/sections/search-input";
 
+import MobileNav from "@/components/sections/mobile-nav";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -70,51 +72,7 @@ export default function RootLayout({
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="flex flex-col">
-                  <nav className="grid gap-2 text-lg font-medium">
-                    <Link href="#" className="flex items-center gap-2 text-lg font-semibold">
-                      <Package2 className="h-6 w-6" />
-                      <span className="sr-only">Acme Inc</span>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                    >
-                      <Home className="h-5 w-5" />
-                      Dashboard
-                    </Link>
-                    <Link
-                      href="#"
-                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl bg-muted px-3 py-2 text-foreground hover:text-foreground"
-                    >
-                      <ShoppingCart className="h-5 w-5" />
-                      Orders
-                      <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
-                        6
-                      </Badge>
-                    </Link>
-                    <Link
-                      href="#"
-                      className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-                    >
-                      <Package className="h-5 w-5" />
-                      Products
-                    </Link>
-                  </nav>
-                  <div className="mt-auto">
-                    <Card>
-                      <CardHeader>
-                        <CardTitle>Upgrade to Pro</CardTitle>
-                        <CardDescription>
-                          Unlock all features and get unlimited access to our support team.
-                        </CardDescription>
-                      </CardHeader>
-                      <CardContent>
-                        <Button size="sm" className="w-full">
-                          Upgrade
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </div>
+                  <MobileNav />
                 </SheetContent>
               </Sheet>
               <SearchInput />
