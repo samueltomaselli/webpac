@@ -8,16 +8,15 @@ import Link from "next/link";
 
 function Contato() {
   return (
-    <div className="flex flex-col  ">
-      <h1 className="text-lg font-semibold md:text-2xl md:px-16 md:py-10 px-10 py-5">Contato</h1>
-      <div className="w-full h-full flex justify-center items-center px-2">
-        <Card className=" max-w-sm  ">
+    <div className="flex flex-col md:px-16 md:py-10 px-10 py-5 gap-5">
+      <h1 className="text-lg font-bold md:text-2xl">Fale conosco</h1>
+      <div className="w-full h-full flex">
+        <Card className="flex flex-col gap-5">
           <CardHeader>
-            <CardTitle className="text-xl">Fale conosco</CardTitle>
             <CardDescription>Escreva-nos sugestões de conteúdos.</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-4">
+            <div className="grid gap-6 py-5">
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
                   <Label htmlFor="first-name">Primeiro nome</Label>
