@@ -6,7 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import Link from "next/link";
 
 function Contato() {
   const [firstName, setFirstName] = useState("");
@@ -15,11 +14,11 @@ function Contato() {
   const [suggestion, setSuggestion] = useState("");
   const [send, setSend] = useState(false);
 
-  const fullName = firstName + lastName;
+  const fullName = firstName + " " + lastName;
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const response = await fetch("/api/email/send", {
+    const response = await fetch("/api/email/send/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
