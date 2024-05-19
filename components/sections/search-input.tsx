@@ -53,14 +53,18 @@ function SearchInput() {
           />
           {searchTerm && (
             <div className="absolute top-full mt-2 w-full flex flex-col bg-[#f2f2f2]  rounded shadow-lg text-sm">
-              {filteredWords.map((word, index) => (
+              {filteredWords.map((item, index) => (
                 <Link
                   onClick={() => setSearchTerm("")}
-                  href={`/aulas/${encodeURIComponent(word)}`}
+                  href={`/aulas/${item
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")}`}
                   key={index}
                   className="p-2 hover:bg-muted"
                 >
-                  {word}
+                  {item}
                 </Link>
               ))}
             </div>

@@ -24,3 +24,4 @@
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/aulas/[slug]"],
   "exclude": ["node_modules"]
 }
+   
