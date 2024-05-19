@@ -10,7 +10,7 @@ const Nav: React.FC = () => {
   const [collapse, setCollapse] = useState(false);
   const pathname = usePathname();
   const [activeItem, setActiveItem] = useState("Dashboard");
-  const activeNavItem = decodeURIComponent(pathname.split("/")[2]);
+  const activeNavItem = pathname.split("/")[2];
 
   return (
     <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
@@ -22,7 +22,7 @@ const Nav: React.FC = () => {
         } transition-all hover:text-primary`}
       >
         <Home className="h-4 w-4" />
-        Dashboard
+        Home
       </Link>
       <div className={`flex-col gap-3 rounded-lg cursor-pointer transition-all`}>
         <div
@@ -54,7 +54,14 @@ const Nav: React.FC = () => {
                 .replace(/\s+/g, "-")}`}
               key={item}
               className={`ml-2 py-2 px-2 text-sm hover:text-primary ${
-                activeNavItem === item ? "bg-muted/45 text-primary rounded-lg" : ""
+                activeNavItem ===
+                item
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "")
+                  .toLowerCase()
+                  .replace(/\s+/g, "-")
+                  ? "bg-muted/45 text-primary rounded-lg"
+                  : ""
               }`}
             >
               {item}

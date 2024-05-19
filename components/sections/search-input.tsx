@@ -2,22 +2,9 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "../ui/input";
-
+import temas from "@/lib/content";
 import { Search } from "lucide-react";
 import Link from "next/link";
-
-const AULAS_ITEMS = [
-  "Lógica de programação",
-  "Linguagem de programação em C",
-  "Bibliotecas básicas em C1",
-  "Declaração de variáveis",
-  "Comandos de entrada e saída",
-  "Condicional",
-  "Laços de repetição",
-  "Conhecendo o arduino",
-  "Componentes básicos do arduino",
-  "Simuladores de robótica",
-];
 
 function SearchInput() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,9 +12,7 @@ function SearchInput() {
   const router = useRouter();
 
   useEffect(() => {
-    setFilteredWords(
-      AULAS_ITEMS.filter((word) => word.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
+    setFilteredWords(temas.filter((word) => word.toLowerCase().includes(searchTerm.toLowerCase())));
   }, [searchTerm]);
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {

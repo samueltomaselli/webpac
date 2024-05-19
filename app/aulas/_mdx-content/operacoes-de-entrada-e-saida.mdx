@@ -1,0 +1,37 @@
+# Operações de entrada e saída
+
+## A função printf()
+
+A função printf() chamamos de saída de dados a exibição de textos ou valores de variáveis na tela.
+
+## A sintaxe básica
+
+    printf(“Mensagem a ser escrita na tela”);
+
+## Exemplo de mensagem que inclui o valor de uma variável
+
+```
+     printf(“Total a pagar: R$ %f”, total);
+```
+
+- %f representa o local onde será escrita uma variável.
+- float total é a variável.
+- float que será mostrada na posição marcada por %f.
+
+## A função scanf()
+
+A função scanf() chamamos de entrada de dados a leitura de dados de uma fonte externa. Essa função é utilizada para fazer a leitura dos dados formatados via teclado.
+
+## Sua sintaxe básica
+
+```
+    scanf(“dado a ser lido”, &nome da variável);
+```
+
+## Exemplo de scanf()
+
+```
+    scanf(“%f”, &salario);
+```
+
+Este comando efetua uma leitura do teclado onde é esperada uma variável float (indicada por “%f”). O valor lido será armazenado no endereço da variável salário. Na lista de argumentos devemos indicar os endereços das variáveis. Para fazer isso adicionamos o símbolo “&” como prefixo na frente do nome da variável, como mostrado no exemplo.

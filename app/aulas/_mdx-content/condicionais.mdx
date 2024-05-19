@@ -1,0 +1,105 @@
+---
+title: "Condicionais"
+---
+
+# Condicionais
+
+## Condicional If
+
+A instrução IF permite executar uma série de instruções caso uma condição se realize.
+
+## A sintaxe desta expressão é a seguinte
+
+```
+
+    if (condição realizada) {
+        lista de instruções;
+    }
+
+```
+
+É possível definir várias condições a serem cumpridas com os conectores AND e OR (&& e ||).
+
+## Condicional else
+
+Essa condicional sempre é usada em conjunto com a condicional If. Enquanto a If coloca condições para o resultado, a else manda instruções a serem executadas em caso do não cumprimento da condição.
+
+## A sintaxe da expressão If... else é a seguinte:
+
+```
+
+    if (condição realizada) {
+        lista de instruções
+    }
+    else {
+    	outra série de instruções
+    }
+
+```
+
+## Condicional Switch
+
+A instrução SWITCH efetua vários testes de valores sobre o conteúdo de uma mesma variável. Esta conexão condicional simplifica muito o teste de vários valores de uma variável, pois esta operação teria sido complicada (mas possível) com varios if.
+
+## Sua sintaxe é a seguinte:
+
+```
+
+    switch (variável) {
+        casa Valor1:
+    	    Lista de instruções;
+    	    break;
+    	casa Valor2 :
+    		Lista de instruções;
+    		break;
+    	casa Valores... :
+    		Lista de instruções;
+    		Break;
+    	default:
+    		Lista de instruções;
+    }
+
+```
+
+Os parênteses após a palavra-chave switch indicam uma expressão cujo valor é testado, sucessivamente, para cada uma das case. Quando a expressão testada é igual a um dos seguintes valores seguindo um case, a lista de instrução que vem depois, é executada.
+
+## Condicional for
+
+O loop FOR utiliza uma variável para controlar a contagem do loop, bem como seu incremento.
+
+## Sua sintaxe é:
+
+```
+
+    #include <stdio.h>
+    int main(void){
+        int contador; //variável de controle do loop
+    	for(contador = 1; contador <= 10; contador++){
+    		printf("%d ", contador);
+    		}
+    	return(0);
+    }
+
+```
+
+O resultado desse código vai ser uma sequência de 1 a 10.
+
+Neste exemplo podemos observar três coisas sobre o funcionamento da estrutura de repetição for:
+
+- Primeiramente o contador foi inicializado com um valor determinado.
+- Depois testamos se a condição que envolve o contador é verdadeira (se contador maior ou igual 10), em caso afirmativo, a repetição continua, caso contrário, ela será encerrada.
+- A cada nova repetição a variável do contador foi incrementada.
+
+## Condicional While
+
+A instrução WHILE representa outro meio de executar várias vezes a mesma série de instruções. Esta instrução executa a lista de instruções enquanto a condição se realiza.
+
+## A sintaxe desta expressão é a seguinte
+
+```
+
+    while (condição realizada) {
+        lista de instruções;
+    }
+
+```

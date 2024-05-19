@@ -4,32 +4,75 @@ title: "Bibliotecas básicas em C"
 
 # Bibliotecas básicas em C
 
-# Título 1
+## Funcionalidade
 
-Exemplo como se estivesse usando o h1
+Essas bibliotecas básicas fornecem as ferramentas essenciais para realizar operações comuns na programação em C. Elas facilitam a manipulação de dados, a realização de cálculos, a leitura e escrita de dados, e a interação com o sistema operacional, tornando a programação mais eficiente e menos propensa a erros. Conhecê-las e saber como usá-las é fundamental para qualquer programador que esteja aprendendo ou trabalhando com C.
 
-## Título 2
+## Exemplo: stdlib.h (Standard Library)
 
-Exemplo como se estivesse usando o h2
+Serve para alocação de memória, controle de processos, conversões e outras utilidades gerais.
 
-### Título 3
+- **Funções Comuns:**
+  - `malloc`: Aloca memória dinamicamente.
+  - `free`: Libera memória alocada dinamicamente.
+  - `exit`: Termina o programa.
+  - `atoi`: Converte uma string para um inteiro.
+  - `rand`: Gera um número aleatório.
+  - `srand`: Inicializa o gerador de números aleatórios.
 
-Também pode adicionar listas
+```
+#include <stdlib.h>
+#include <stdio.h>
 
-- Item 1
-- Item 2
-- Item 3
+int main() {
+    int *array = (int *)malloc(5 * sizeof(int));
+    if (array == NULL) {
+        printf("Erro na alocação de memória.\n");
+        exit(1);
+    }
 
-**Texto negrito**
+    for (int i = 0; i < 5; i++) {
+        array[i] = i * i;
+    }
 
-_Texto itálico_
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 
-> Citação
+    free(array);
+    return 0;
+}
+```
 
-Exemplo de bloco de código
+## Exemplo: string.h (String Handling)
 
-```javascript
-function helloWorld() {
-  console.log("Hello, world!");
+Serve para manipulação de strings (cadeias de caracteres).
+
+- **Funções Comuns:**
+  - `strlen`: Retorna o comprimento de uma string.
+  - `strcpy`: Copia uma string para outra.
+  - `strcat`: Concatena (junta) duas strings.
+  - `strcmp`: Compara duas strings.
+  - `strchr`: Encontra a primeira ocorrência de um caractere em uma string.
+  - `strstr`: Encontra a primeira ocorrência de uma substring em uma string.
+
+**Exemplo:**
+
+```
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char str1[20] = "Hello";
+    char str2[20] = "World";
+
+    strcat(str1, " ");
+    strcat(str1, str2);
+
+    printf("Concatenated String: %s\n", str1);
+    printf("Length of String: %lu\n", strlen(str1));
+
+    return 0;
 }
 ```
