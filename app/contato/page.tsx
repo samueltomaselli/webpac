@@ -88,7 +88,7 @@ function Contato() {
                   onChange={handleInputChange(setEmail)}
                   value={email}
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="email@exemplo.com"
                   required
                 />
               </div>
