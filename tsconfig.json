@@ -21,7 +21,13 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/aulas/[slug]"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/aulas/[slug]",
+    "app/api/getFiles.js"
+  ],
   "exclude": ["node_modules"]
 }
-   

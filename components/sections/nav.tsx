@@ -2,33 +2,36 @@
 
 import { Home, Library, Mail } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { usePathname } from "next/navigation";
-import temas from "@/lib/content";
 
-const Nav: React.FC = () => {
+type Props = {
+  blogs: any;
+};
+
+const Nav = ({ blogs }: Props) => {
   const [collapse, setCollapse] = useState(false);
   const pathname = usePathname();
   const [activeItem, setActiveItem] = useState("Dashboard");
   const activeNavItem = pathname.split("/")[2];
+
+  console.log(blogs);
 
   return (
     <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
       <Link
         onClick={() => setActiveItem("Dashboard")}
         href="/"
-        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${
-          activeItem === "Dashboard" ? "bg-muted" : ""
-        } transition-all hover:text-primary`}
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Dashboard" ? "bg-muted" : ""
+          } transition-all hover:text-primary`}
       >
         <Home className="h-4 w-4" />
         Home
       </Link>
       <div className={`flex-col gap-3 rounded-lg cursor-pointer transition-all`}>
         <div
-          className={`${
-            activeItem === "Aulas" ? "bg-muted" : ""
-          } flex items-center gap-3 px-3 py-2 hover:text-primary rounded-lg transition-all`}
+          className={`${activeItem === "Aulas" ? "bg-muted" : ""
+            } flex items-center gap-3 px-3 py-2 hover:text-primary rounded-lg transition-all`}
           onClick={() => {
             setActiveItem("Aulas");
             setCollapse(!collapse);
@@ -45,36 +48,34 @@ const Nav: React.FC = () => {
             transition: "max-height 0.4s ease-in-out",
           }}
         >
-          {temas.map((item) => (
+          {blogs.map((item: { frontmatter: { title: string; }; }, i: React.Key | null | undefined) => (
             <Link
-              href={`/aulas/${item
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "")
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              key={item}
-              className={`ml-2 py-2 px-2 text-sm hover:text-primary ${
-                activeNavItem ===
-                item
-                  .normalize("NFD")
-                  .replace(/[\u0300-\u036f]/g, "")
-                  .toLowerCase()
-                  .replace(/\s+/g, "-")
-                  ? "bg-muted/45 text-primary rounded-lg"
-                  : ""
-              }`}
+              key={i}
+              href={`/aulas/${item.frontmatter.title
+                .normalize("NFD") // Decompor os caracteres unicode
+                .replace(/[\u0300-\u036f]/g, "") // Remover acentos
+                .toLowerCase() // Converter para minúsculas
+                .replace(/\s+/g, "-")}`} // Substituir espaços por hifens
+              className={`ml-2 py-2 px-2 text-sm hover:text-primary ${activeNavItem === item.frontmatter.title
+                .normalize("NFD") // Decompor os caracteres unicode
+                .replace(/[\u0300-\u036f]/g, "") // Remover acentos
+                .toLowerCase() // Converter para minúsculas
+                .replace(/\s+/g, "-") // Substituir espaços por hifens
+                ? "bg-muted/45 text-primary rounded-lg"
+                : ""
+                }`}
             >
-              {item}
+              {item.frontmatter.title}
             </Link>
           ))}
+
         </div>
       </div>
       <Link
         onClick={() => setActiveItem("Contato")}
         href="/contato"
-        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${
-          activeItem === "Contato" ? "bg-muted" : ""
-        } transition-all hover:text-primary`}
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Contato" ? "bg-muted" : ""
+          } transition-all hover:text-primary`}
       >
         <Mail className="h-4 w-4" />
         Contato

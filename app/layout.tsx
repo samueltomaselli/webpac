@@ -3,34 +3,17 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import {
-  Bell,
-  CircleUser,
-  Home,
+
   GraduationCap,
   Menu,
-  Package,
-  Search,
-  ShoppingCart,
-  Package2,
+
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Nav from "@/components/sections/nav";
-import { useRouter } from "next/router";
-import { useState } from "react";
 import SearchInput from "@/components/sections/search-input";
-
+import { getBlogs } from "@/app/aulas/fetchers";
 import MobileNav from "@/components/sections/mobile-nav";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -40,11 +23,13 @@ export const metadata: Metadata = {
   description: "Descrição",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const blogs = await getBlogs();
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -58,7 +43,7 @@ export default function RootLayout({
                 </Link>
               </div>
               <div className="flex-1">
-                <Nav />
+                <Nav blogs={blogs} />
               </div>
             </div>
           </div>
@@ -72,7 +57,7 @@ export default function RootLayout({
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="left" className="flex flex-col">
-                  <MobileNav />
+                  <MobileNav blogs={blogs} />
                 </SheetContent>
               </Sheet>
               <SearchInput />

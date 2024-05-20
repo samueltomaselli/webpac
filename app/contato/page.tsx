@@ -44,10 +44,10 @@ function Contato() {
 
   const handleInputChange =
     (setter: React.Dispatch<React.SetStateAction<string>>) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setter(e.target.value);
-      setSend(false);
-    };
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setter(e.target.value);
+        setSend(false);
+      };
 
   return (
     <div className="flex flex-col md:px-16 md:py-10 px-10 py-5 gap-5">
