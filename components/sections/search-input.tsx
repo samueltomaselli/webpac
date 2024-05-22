@@ -28,7 +28,7 @@ function SearchInput() {
     <div className="w-full flex-1">
       <form onSubmit={handleSearchSubmit}>
         <div className="relative max-w-80">
-          <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Search className="absolute z-50 left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             type="search"
             placeholder="Encontre aulas por tema..."
@@ -37,7 +37,7 @@ function SearchInput() {
             onChange={handleSearchChange}
           />
           {searchTerm && (
-            <div className="absolute top-full mt-2 w-full flex flex-col bg-background  rounded shadow-lg text-sm">
+            <div className="absolute z-50 border top-full mt-1.5 w-full flex flex-col bg-background  rounded shadow-lg text-sm">
               {filteredWords.map((item, index) => (
                 <Link
                   onClick={() => setSearchTerm("")}
