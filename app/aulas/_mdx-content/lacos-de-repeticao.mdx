@@ -3,3 +3,156 @@ title: "Laços de repetição"
 ---
 
 # Laços de repetição
+
+Os laços de repetição são estruturas de controle que permitem a execução repetida de um bloco de código enquanto uma condição específica for verdadeira. Em C, temos três tipos principais de laços de repetição: `for`, `while` e `do-while`.
+
+## Laço `for`
+
+O laço `for` é ideal quando sabemos de antemão quantas vezes queremos executar um bloco de código. Sua estrutura básica é:
+
+```c
+for (inicialização; condição; incremento) {
+    // código a ser executado
+}
+```
+
+### Exemplo:
+
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 10; i++) {
+        printf("Número: %d\n", i);
+    }
+    return 0;
+}
+```
+
+Neste exemplo, o laço `for` inicializa a variável `i` com 0, verifica se `i` é menor que 10 antes de cada iteração e incrementa `i` em 1 após cada iteração.
+
+## Laço `while`
+
+O laço `while` é usado quando queremos repetir um bloco de código enquanto uma condição for verdadeira. Sua estrutura básica é:
+
+```c
+while (condição) {
+    // código a ser executado
+}
+```
+
+### Exemplo:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 0;
+    while (i < 10) {
+        printf("Número: %d\n", i);
+        i++;
+    }
+    return 0;
+}
+```
+
+Neste exemplo, o laço `while` continua executando enquanto `i` for menor que 10, incrementando `i` em 1 a cada iteração.
+
+## Laço `do-while`
+
+O laço `do-while` é semelhante ao `while`, mas garante que o bloco de código seja executado pelo menos uma vez, pois a condição é verificada após a execução. Sua estrutura básica é:
+
+```c
+do {
+    // código a ser executado
+} while (condição);
+```
+
+### Exemplo:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 0;
+    do {
+        printf("Número: %d\n", i);
+        i++;
+    } while (i < 10);
+    return 0;
+}
+```
+
+Neste exemplo, o bloco de código dentro do `do-while` é executado primeiro, e então a condição é verificada. Se `i` for menor que 10, a execução continua.
+
+## Controle de Laços
+
+### Instrução `break`
+
+A instrução `break` é usada para sair imediatamente de um laço, independentemente da condição original do laço.
+
+### Exemplo:
+
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            break;
+        }
+        printf("Número: %d\n", i);
+    }
+    return 0;
+}
+```
+
+Neste exemplo, o laço `for` será interrompido quando `i` for igual a 5.
+
+### Instrução `continue`
+
+A instrução `continue` é usada para pular a iteração atual do laço e continuar com a próxima iteração.
+
+### Exemplo:
+
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 10; i++) {
+        if (i == 5) {
+            continue;
+        }
+        printf("Número: %d\n", i);
+    }
+    return 0;
+}
+```
+
+Neste exemplo, quando `i` for igual a 5, a instrução `printf` será pulada, e o laço continuará com a próxima iteração.
+
+## Laços Aninhados
+
+Os laços podem ser aninhados, ou seja, um laço dentro de outro laço.
+
+### Exemplo:
+
+```c
+#include <stdio.h>
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("i = %d, j = %d\n", i, j);
+        }
+    }
+    return 0;
+}
+```
+
+Neste exemplo, para cada valor de `i` de 0 a 4, o laço interno `j` será executado de 0 a 2.
+
+## Considerações Finais
+
+- **Cuidados com laços infinitos** : Certifique-se de que a condição dos laços possa ser falsificada em algum momento. Laços infinitos podem travar o programa.
+- **Escolha do laço** : Use `for` quando souber o número de iterações, `while`
