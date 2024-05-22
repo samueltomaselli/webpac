@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import rehypeHighlight from "rehype-highlight";
 
 const contentDir = path.join(process.cwd(), "app/aulas/_mdx-content");
 
@@ -8,13 +9,15 @@ export async function getBlogBySlug(slug: string) {
   const fileName = slug + ".mdx";
   const filePath = path.join(contentDir, fileName);
   const fileContent = fs.readFileSync(filePath, "utf8");
+
   const { frontmatter, content } = await compileMDX<{
     title: string;
     author: string;
     publishDate: string;
   }>({
     source: fileContent,
-    options: { parseFrontmatter: true },
+    // @ts-ignore
+    options: { parseFrontmatter: true, mdxOptions: { rehypePlugins: [rehypeHighlight] } },
   });
   return {
     frontmatter,
