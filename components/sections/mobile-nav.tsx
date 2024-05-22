@@ -70,7 +70,7 @@ function MobileNav({ blogs }: Props) {
                   .replace(/[\u0300-\u036f]/g, "")
                   .toLowerCase()
                   .replace(/\s+/g, "-")
-                ? "bg-muted/45 text-primary rounded-lg"
+                ? "bg-muted/80 text-primary rounded-lg"
                 : ""
                 }`}
             >
@@ -79,6 +79,9 @@ function MobileNav({ blogs }: Props) {
           ))}
         </div>
       </div>
+
+
+
       <Link
         onClick={() => setActiveItem("Contato")}
         href="/contato"

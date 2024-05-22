@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Library, Mail } from "lucide-react";
+import { Home, Library, Mail, Calendar } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -52,16 +52,16 @@ const Nav = ({ blogs }: Props) => {
             <Link
               key={i}
               href={`/aulas/${item.frontmatter.title
-                .normalize("NFD") // Decompor os caracteres unicode
-                .replace(/[\u0300-\u036f]/g, "") // Remover acentos
-                .toLowerCase() // Converter para minúsculas
-                .replace(/\s+/g, "-")}`} // Substituir espaços por hifens
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
               className={`ml-2 py-2 px-2 text-sm hover:text-primary ${activeNavItem === item.frontmatter.title
-                .normalize("NFD") // Decompor os caracteres unicode
-                .replace(/[\u0300-\u036f]/g, "") // Remover acentos
-                .toLowerCase() // Converter para minúsculas
-                .replace(/\s+/g, "-") // Substituir espaços por hifens
-                ? "bg-muted/45 text-primary rounded-lg"
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                ? "bg-muted/80 text-primary rounded-lg"
                 : ""
                 }`}
             >
@@ -72,6 +72,16 @@ const Nav = ({ blogs }: Props) => {
         </div>
       </div>
       <Link
+        onClick={() => setActiveItem("Calendario")}
+        href="/calendario"
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Calendario" ? "bg-muted" : ""
+          } transition-all hover:text-primary`}
+      >
+        <Calendar className="h-4 w-4" />
+        Calendário
+      </Link>
+
+      <Link
         onClick={() => setActiveItem("Contato")}
         href="/contato"
         className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Contato" ? "bg-muted" : ""
@@ -80,6 +90,8 @@ const Nav = ({ blogs }: Props) => {
         <Mail className="h-4 w-4" />
         Contato
       </Link>
+
+
     </nav>
   );
 };
