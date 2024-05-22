@@ -37,7 +37,7 @@ function SearchInput() {
             onChange={handleSearchChange}
           />
           {searchTerm && (
-            <div className="absolute top-full mt-2 w-full flex flex-col bg-[#f2f2f2]  rounded shadow-lg text-sm">
+            <div className="absolute top-full mt-2 w-full flex flex-col bg-background  rounded shadow-lg text-sm">
               {filteredWords.map((item, index) => (
                 <Link
                   onClick={() => setSearchTerm("")}

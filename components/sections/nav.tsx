@@ -22,7 +22,7 @@ const Nav = ({ blogs }: Props) => {
       <Link
         onClick={() => setActiveItem("Dashboard")}
         href="/"
-        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Dashboard" ? "bg-muted" : ""
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Dashboard" ? "bg-muted/50 border-solid border " : "border border-transparent"
           } transition-all hover:text-primary`}
       >
         <Home className="h-4 w-4" />
@@ -30,7 +30,7 @@ const Nav = ({ blogs }: Props) => {
       </Link>
       <div className={`flex-col gap-3 rounded-lg cursor-pointer transition-all`}>
         <div
-          className={`${activeItem === "Aulas" ? "bg-muted" : ""
+          className={`${activeItem === "Aulas" ? "bg-muted border-solid border" : "border border-transparent"
             } flex items-center gap-3 px-3 py-2 hover:text-primary rounded-lg transition-all`}
           onClick={() => {
             setActiveItem("Aulas");
@@ -56,13 +56,12 @@ const Nav = ({ blogs }: Props) => {
                 .replace(/[\u0300-\u036f]/g, "")
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
-              className={`ml-2 py-2 px-2 text-sm hover:text-primary ${activeNavItem === item.frontmatter.title
+              className={`rounded-lg ml-2 py-2 px-2 text-sm hover:text-primary ${activeNavItem === item.frontmatter.title
                 .normalize("NFD")
                 .replace(/[\u0300-\u036f]/g, "")
                 .toLowerCase()
                 .replace(/\s+/g, "-")
-                ? "bg-muted/80 text-primary rounded-lg"
-                : ""
+                ? "bg-muted/50 border-solid border " : "border border-transparent"
                 }`}
             >
               {item.frontmatter.title}
@@ -74,7 +73,7 @@ const Nav = ({ blogs }: Props) => {
       <Link
         onClick={() => setActiveItem("Calendario")}
         href="/calendario"
-        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Calendario" ? "bg-muted" : ""
+        className={`flex items-center gap-3 rounded-lg px-3 py-2   ${activeItem === "Calendario" ? "bg-muted border-solid border " : "border border-transparent"
           } transition-all hover:text-primary`}
       >
         <Calendar className="h-4 w-4" />
@@ -84,7 +83,7 @@ const Nav = ({ blogs }: Props) => {
       <Link
         onClick={() => setActiveItem("Contato")}
         href="/contato"
-        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Contato" ? "bg-muted" : ""
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Contato" ? "bg-muted border-solid border " : "border border-transparent"
           } transition-all hover:text-primary`}
       >
         <Mail className="h-4 w-4" />

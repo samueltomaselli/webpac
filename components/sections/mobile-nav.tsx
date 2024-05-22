@@ -80,8 +80,6 @@ function MobileNav({ blogs }: Props) {
         </div>
       </div>
 
-
-
       <Link
         onClick={() => setActiveItem("Contato")}
         href="/contato"

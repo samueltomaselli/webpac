@@ -13,7 +13,7 @@ export default function Dashboard() {
     ]);
     return (
         <div className=" md:px-16 md:py-10 px-10 py-5 flex flex-col ">
-            <h1 className="text-lg font-bold md:text-2xl mb-10">Calendário de aulas</h1>
+            <h1 className="text-lg font-bold md:text-2xl mb-10">Calendário</h1>
             <div className="flex-col flex">
                 <Calendar mode="multiple"
                     selected={selectedDates}
@@ -27,7 +27,7 @@ export default function Dashboard() {
                             </time>
                             <p className="mt-2 flex-auto font-semibold  sm:mt-0">Aula 01</p>
                             <p className="flex-none sm:ml-6">
-                                <time dateTime="2022-01-13T14:30">07:00 AM</time> - <time dateTime="2022-01-13T16:30">10:15 AM</time>
+                                <time dateTime="2022-01-13T14:30">09:00</time> - <time dateTime="2022-01-13T16:30">12:00</time>
                             </p>
                         </li>
                         <li className="py-4 sm:flex">
@@ -36,7 +36,7 @@ export default function Dashboard() {
                             </time>
                             <p className="mt-2 flex-auto font-semibold  sm:mt-0">Aula 02</p>
                             <p className="flex-none sm:ml-6">
-                                <time dateTime="2022-01-17T10:00">07:00 AM</time> - <time dateTime="2022-01-17T10:15">10:15 AM</time>
+                                <time dateTime="2022-01-17T10:00">09:00</time> - <time dateTime="2022-01-17T10:15">12:00</time>
                             </p>
                         </li>
                         <li className="py-4 sm:flex">
@@ -45,7 +45,7 @@ export default function Dashboard() {
                             </time>
                             <p className="mt-2 flex-auto font-semibold  sm:mt-0">Aula 03</p>
                             <p className="flex-none sm:ml-6">
-                                <time dateTime="2022-01-17T10:00">07:00 AM</time> - <time dateTime="2022-01-17T10:15">10:15 AM</time>
+                                <time dateTime="2022-01-17T10:00">09:00</time> - <time dateTime="2022-01-17T10:15">12:00</time>
                             </p>
                         </li>
                         <li className="py-4 sm:flex">
@@ -54,7 +54,7 @@ export default function Dashboard() {
                             </time>
                             <p className="mt-2 flex-auto font-semibold  sm:mt-0">Aula 04</p>
                             <p className="flex-none sm:ml-6">
-                                <time dateTime="2022-01-17T10:00">07:00 AM</time> - <time dateTime="2022-01-17T10:15">10:15 AM</time>
+                                <time dateTime="2022-01-17T10:00">09:00</time> - <time dateTime="2022-01-17T10:15">12:00</time>
                             </p>
                         </li>
                     </ol>
