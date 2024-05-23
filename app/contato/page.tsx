@@ -44,15 +44,15 @@ function Contato() {
 
   const handleInputChange =
     (setter: React.Dispatch<React.SetStateAction<string>>) =>
-      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setter(e.target.value);
-        setSend(false);
-      };
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setter(e.target.value);
+      setSend(false);
+    };
 
   return (
-    <div className="flex flex-col md:px-16 md:py-10 px-10 py-5 gap-5">
-      <h1 className="text-lg font-bold md:text-2xl">Fale conosco</h1>
-      <div className="w-full h-full flex">
+    <div className="mx-auto  mt-auto flex flex-col justify-center md:px-16 md:py-10 px-10 py-5 gap-5">
+      <h1 className="text-lg font-bold md:text-3xl">Fale conosco</h1>
+      <div className="flex items-center justify-center">
         <Card className="flex flex-col gap-5">
           <CardHeader>
             <CardDescription>Escreva-nos sugestões de conteúdos.</CardDescription>

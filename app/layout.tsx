@@ -2,12 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import {
-
-  GraduationCap,
-  Menu,
-
-} from "lucide-react";
+import { GraduationCap, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -47,9 +42,8 @@ export default async function RootLayout({
                 <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                   <Link href="/" className="flex items-center gap-2 font-semibold">
                     <GraduationCap className="h-6 w-6" />
-                    <span className="">Projeto</span>
+                    <span className="">WebPac</span>
                   </Link>
-
                 </div>
                 <div className="flex-1">
                   <Nav blogs={blogs} />
@@ -74,16 +68,15 @@ export default async function RootLayout({
               </header>
               {children}
               <footer className=" mt-auto">
-                <div className="mt-4 md:py-10 py-5 max-w-7xl border-t md:flex md:items-center md:justify-between mx-10 md:mx-16">
+                <div className=" md:py-10 py-5 max-w-7xl border-t md:flex md:items-center md:justify-between mx-10 md:mx-16">
                   <div className=" md:order-1">
                     <p className="text-center text-xs leading-5 text-gray-500">
-                      &copy; 2024 Projeto, Inc. Todos os direitos reservados.
+                      &copy; 2024 WebPac. Todos os direitos reservados.
                     </p>
                   </div>
                 </div>
               </footer>
             </div>
-
           </div>
         </ThemeProvider>
       </body>
