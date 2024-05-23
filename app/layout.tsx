@@ -67,11 +67,11 @@ export default async function RootLayout({
                 <ModeToggle />
               </header>
               {children}
-              <footer className=" mt-auto">
+              <footer className="mt-auto">
                 <div className=" md:py-10 py-5 max-w-7xl border-t md:flex md:items-center md:justify-between mx-10 md:mx-16">
                   <div className=" md:order-1">
                     <p className="text-center text-xs leading-5 text-gray-500">
-                      &copy; 2024 WebPac. Todos os direitos reservados.
+                      &copy; {new Date().getFullYear()} WebPac. Todos os direitos reservados.
                     </p>
                   </div>
                 </div>

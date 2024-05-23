@@ -44,10 +44,10 @@ function Contato() {
 
   const handleInputChange =
     (setter: React.Dispatch<React.SetStateAction<string>>) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setter(e.target.value);
-      setSend(false);
-    };
+      (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setter(e.target.value);
+        setSend(false);
+      };
 
   return (
     <div className="mx-auto  mt-auto flex flex-col justify-center md:px-16 md:py-10 px-10 py-5 gap-5">
@@ -58,7 +58,7 @@ function Contato() {
             <CardDescription>Escreva-nos sugestões de conteúdos.</CardDescription>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="grid gap-6 py-5">
+            <form onSubmit={handleSubmit} className="grid gap-6 py-2">
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
                   <Label htmlFor="first-name">Primeiro nome</Label>
@@ -104,7 +104,8 @@ function Contato() {
                 Enviar
               </Button>
             </form>
-            {send && <p>Sugestão enviada com sucesso!</p>}
+            {!send && <p className="invisible">Sugestão enviada com sucesso!</p>}
+            {send && <p className="visible">Sugestão enviada com sucesso!</p>}
           </CardContent>
         </Card>
       </div>
