@@ -18,7 +18,7 @@ import {
 export default function Aboutus() {
     return (
         <div className=" md:px-16 md:py-10 px-5 py-5 flex flex-col ">
-            <h1 className="text-lg font-bold md:text-2xl mb-10">Quem somos</h1>
+            <h1 className="text-lg font-bold md:text-2xl mb-10">Equipe de desenvolvimento</h1>
             <div className="flex-col flex">
                 <Card>
                     <CardContent className="grid gap-8">
@@ -78,9 +78,9 @@ export default function Aboutus() {
                                 <AvatarFallback>SD</AvatarFallback>
                             </Avatar>
                             <div className="grid gap-1">
-                                <p className="text-sm font-medium leading-none">Valdeci Novak Junior</p>
+                                <p className="text-sm font-medium leading-none">Valdecir Novak Junior</p>
                                 <p className="text-sm text-muted-foreground">
-                                    valdecinovakjr@email.com
+                                    valdecirnovak@email.com
                                 </p>
                             </div>
                             <div className="ml-auto font-medium">Criação de conteúdo e UI/UX</div>
