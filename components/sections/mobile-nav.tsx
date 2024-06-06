@@ -60,13 +60,13 @@ function MobileNav({ blogs }: Props) {
                   .replace(/\s+/g, "-")}`}
                 key={i}
                 className={`ml-2 py-2 px-2 text-sm hover:text-primary ${activeNavItem ===
-                    item.frontmatter.title
-                      .normalize("NFD")
-                      .replace(/[\u0300-\u036f]/g, "")
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")
-                    ? "bg-muted/80 text-primary rounded-lg"
-                    : ""
+                  item.frontmatter.title
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "")
+                    .toLowerCase()
+                    .replace(/\s+/g, "-")
+                  ? "bg-muted/80 text-primary rounded-lg"
+                  : ""
                   }`}
               >
                 {item.frontmatter.title}
@@ -87,7 +87,7 @@ function MobileNav({ blogs }: Props) {
 
         <Link
           onClick={() => setActiveItem("Equipe")}
-          href="/Equipe"
+          href="/equipe"
           className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Equipe" ? "bg-muted" : ""
             } transition-all hover:text-primary`}
         >
