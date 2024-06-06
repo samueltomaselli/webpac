@@ -12,7 +12,7 @@ export default function Dashboard() {
         new Date('2024-06-30'),
     ]);
     return (
-        <div className=" md:px-16 md:py-10 px-10 py-5 flex flex-col ">
+        <div className=" md:px-16 md:py-10 px-5 py-5 flex flex-col ">
             <h1 className="text-lg font-bold md:text-2xl mb-10">Calendário</h1>
             <div className="flex-col flex">
                 <Calendar mode="multiple"

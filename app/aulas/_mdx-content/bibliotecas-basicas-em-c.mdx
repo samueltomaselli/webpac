@@ -79,4 +79,57 @@ Serve para manipulação de strings (cadeias de caracteres).
         return 0;
     }
 
+
 ```
+
+## Exemplo: math.h (Mathematical Functions)
+
+Serve para realizar operações matemáticas comuns.
+
+- **Funções Comuns:**
+  - `sqrt`: Calcula a raiz quadrada de um número.
+  - `pow`: Calcula a potência de um número.
+  - `sin`: Calcula o seno de um ângulo (em radianos).
+  - `cos`: Calcula o cosseno de um ângulo (em radianos).
+  - `tan`: Calcula a tangente de um ângulo (em radianos).
+  - `log`: Calcula o logaritmo natural de um número.
+  - `exp`: Calcula o valor de `e` elevado a um número.
+
+**Exemplo:**
+
+```c
+#include <math.h>
+#include <stdio.h>
+
+int main() {
+    double num = 16.0;
+    double raiz_quadrada = sqrt(num);
+    double base = 2.0;
+    double expoente = 3.0;
+    double potencia = pow(base, expoente);
+    double angulo = M_PI / 4; // 45 graus em radianos
+    double seno = sin(angulo);
+    double cosseno = cos(angulo);
+    double tangente = tan(angulo);
+
+    printf("Raiz quadrada de %.2f: %.2f\n", num, raiz_quadrada);
+    printf("%.2f elevado a %.2f: %.2f\n", base, expoente, potencia);
+    printf("Seno de 45 graus: %.2f\n", seno);
+    printf("Cosseno de 45 graus: %.2f\n", cosseno);
+    printf("Tangente de 45 graus: %.2f\n", tangente);
+
+    return 0;
+}
+
+```
+
+## Exercício
+
+Escreva um programa em C que:
+
+1. Solicite ao usuário para digitar dois números inteiros;
+2. Utilize a biblioteca `math.h` para calcular a potência do primeiro número elevado ao segundo número;
+3. Utilize a biblioteca `math.h` para calcular a raiz quadrada do primeiro número;
+4. Mostre os resultados na tela.
+
+[Compilador on-line](https://www.onlinegdb.com/online_c_compiler)

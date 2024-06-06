@@ -42,7 +42,7 @@ export default async function RootLayout({
                 <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
                   <Link href="/" className="flex items-center gap-2 font-semibold">
                     <GraduationCap className="h-6 w-6" />
-                    <span className="">WebPac</span>
+                    <span>WebPac</span>
                   </Link>
                 </div>
                 <div className="flex-1">
@@ -56,8 +56,10 @@ export default async function RootLayout({
                   <SheetTrigger asChild>
                     <Button variant="outline" size="icon" className="shrink-0 md:hidden">
                       <Menu className="h-5 w-5" />
+
                       <span className="sr-only">Toggle navigation menu</span>
                     </Button>
+
                   </SheetTrigger>
                   <SheetContent side="left" className="flex flex-col">
                     <MobileNav blogs={blogs} />

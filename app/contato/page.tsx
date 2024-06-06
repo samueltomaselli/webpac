@@ -50,7 +50,7 @@ function Contato() {
       };
 
   return (
-    <div className="mx-auto  mt-auto flex flex-col justify-center md:px-16 md:py-10 px-10 py-5 gap-5">
+    <div className="mx-auto  mt-auto flex flex-col justify-center md:px-16 md:py-10 px-5 py-5 gap-5">
       <h1 className="text-lg font-bold md:text-3xl">Fale conosco</h1>
       <div className="flex items-center justify-center">
         <Card className="flex flex-col gap-5">
