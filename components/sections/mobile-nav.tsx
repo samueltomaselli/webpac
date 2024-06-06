@@ -86,6 +86,16 @@ function MobileNav({ blogs }: Props) {
       </Link>
 
       <Link
+        onClick={() => setActiveItem("Equipe")}
+        href="/Equipe"
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Equipe" ? "bg-muted" : ""
+          } transition-all hover:text-primary`}
+      >
+        <Mail className="h-4 w-4" />
+        Contato
+      </Link>
+
+      <Link
         onClick={() => setActiveItem("Contato")}
         href="/contato"
         className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Contato" ? "bg-muted" : ""

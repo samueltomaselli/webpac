@@ -1,6 +1,6 @@
 "use client";
 
-import { Home, Library, Mail, Calendar } from "lucide-react";
+import { Home, Library, Mail, Calendar, Users } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -78,6 +78,16 @@ const Nav = ({ blogs }: Props) => {
       >
         <Calendar className="h-4 w-4" />
         Calendário
+      </Link>
+
+      <Link
+        onClick={() => setActiveItem("Equipe")}
+        href="/equipe"
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 ${activeItem === "Equipe" ? "bg-muted border-solid border " : "border border-transparent"
+          } transition-all hover:text-primary`}
+      >
+        <Users className="h-4 w-4" />
+        Equipe
       </Link>
 
       <Link
